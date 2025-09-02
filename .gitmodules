@@ -1,0 +1,12 @@
+[submodule "dailyfeed-content"]
+	path = dailyfeed-content
+	url = https://github.com/alpha3002025/dailyfeed-content.git
+[submodule "dailyfeed-code"]
+	path = dailyfeed-code
+	url = https://github.com/alpha3002025/dailyfeed-code.git
+[submodule "dailyfeed-feign"]
+	path = dailyfeed-feign
+	url = https://github.com/alpha3002025/dailyfeed-feign.git
+[submodule "dailyfeed-infrastructure"]
+	path = dailyfeed-infrastructure
+	url = https://github.com/alpha3002025/dailyfeed-infrastructure.git
