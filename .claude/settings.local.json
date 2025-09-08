@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(kubectl logs:*)",
+      "Bash(kubectl get pod:*)",
+      "Bash(kubectl describe:*)",
+      "Bash(kubectl get deployment:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

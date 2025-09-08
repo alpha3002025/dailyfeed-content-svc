@@ -13,4 +13,4 @@ configSecretItems:
 - kafka
 - redis-nosecret
 - mysql
-portNumber: 8081
+portNumber: "8081"
