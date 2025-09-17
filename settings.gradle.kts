@@ -4,4 +4,5 @@ include(
     "dailyfeed-code",
     "dailyfeed-feign",
     "dailyfeed-content",
+    "dailyfeed-pagination-support"
 )
