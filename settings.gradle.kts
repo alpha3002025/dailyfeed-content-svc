@@ -5,5 +5,6 @@ include(
     "dailyfeed-feign",
     "dailyfeed-content",
     "dailyfeed-pagination-support",
-    "dailyfeed-redis-support"
+    "dailyfeed-redis-support",
+    "dailyfeed-kafka-support",
 )
