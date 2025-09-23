@@ -4,7 +4,12 @@
       "Bash(kubectl logs:*)",
       "Bash(kubectl get pod:*)",
       "Bash(kubectl describe:*)",
-      "Bash(kubectl get deployment:*)"
+      "Bash(kubectl get deployment:*)",
+      "Bash(docker logs:*)",
+      "Bash(docker volume rm:*)",
+      "Bash(docker exec:*)",
+      "Bash(docker network inspect:*)",
+      "Bash(nc:*)"
     ],
     "deny": [],
     "ask": []
