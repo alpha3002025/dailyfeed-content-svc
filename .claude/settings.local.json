@@ -9,7 +9,8 @@
       "Bash(docker volume rm:*)",
       "Bash(docker exec:*)",
       "Bash(docker network inspect:*)",
-      "Bash(nc:*)"
+      "Bash(nc:*)",
+      "Bash(docker inspect:*)"
     ],
     "deny": [],
     "ask": []
