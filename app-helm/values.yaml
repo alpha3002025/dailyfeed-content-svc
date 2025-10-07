@@ -5,7 +5,6 @@ appName: dailyfeed-backend
 replicas: 1
 envValues: [] ## 각 서비스마다 필요에 따라 다르게 지정
 configSecretItems: [] ## 각 서비스마다 필요에 따라 다르게 지정
-portNumber: "8081"
 resources:
   memory:
     requests: "500Mi"
