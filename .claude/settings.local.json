@@ -10,7 +10,9 @@
       "Bash(docker exec:*)",
       "Bash(docker network inspect:*)",
       "Bash(nc:*)",
-      "Bash(docker inspect:*)"
+      "Bash(docker inspect:*)",
+      "Bash(./gradlew:*)",
+      "Bash(kubectl delete pod:*)"
     ],
     "deny": [],
     "ask": []
