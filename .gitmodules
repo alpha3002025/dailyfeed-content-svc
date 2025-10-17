@@ -21,4 +21,4 @@
 	url = https://github.com/alpha3002025/dailyfeed-app-helm.git
 [submodule "dailyfeed-pvc-support"]
 	path = dailyfeed-pvc-support
-	url = https://github.com/alpha3002025/dailyfeed-pvc
+	url = https://github.com/alpha3002025/dailyfeed-pvc-support.git
