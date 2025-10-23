@@ -2,7 +2,7 @@ plugins {
     java
     id("org.springframework.boot") version "3.5.5" apply false
     id("io.spring.dependency-management") version "1.1.7" apply false
-    id("com.google.cloud.tools.jib") version "3.4.0"
+    id("com.google.cloud.tools.jib") version "3.4.5"
 }
 
 allprojects {
@@ -38,25 +38,44 @@ subprojects {
 }
 
 project(":dailyfeed-content") {
+    // Spring Boot main class 설정
+    tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
+        mainClass.set("click.dailyfeed.content.ContentApplication")
+    }
+
     jib {
         // Base 이미지 설정 (Java 17 기반)
         from {
             // Google의 distroless 이미지 사용 (인증 불필요)
-            image = "gcr.io/distroless/java17-debian12"
+//            image = "gcr.io/distroless/java17-debian12"
             // 보안 강화된 최소한의 베이스 이미지
 //            image = "amazoncorretto:17"
-            // image = "eclipse-temurin:17-jre-alpine"
+             image = "eclipse-temurin:17-jre-alpine"
             // 또는 더 작은 이미지를 원한다면: "gcr.io/distroless/java17-debian11"
         }
 
         // 타겟 이미지 설정
         to {
-            tags = setOf("0.0.2")
+            val imageVersion = System.getenv("IMAGE_VERSION") ?: "beta-20251015-0001"
+            tags = setOf(imageVersion)
             image = "alpha300uk/dailyfeed-content-svc"
+
+            // Docker Hub 인증 (환경변수에서 가져오기)
+            auth {
+                username = System.getenv("DOCKER_USERNAME") ?: ""
+                password = System.getenv("DOCKER_PASSWORD") ?: ""
+            }
+        }
+
+        // Docker 실행 파일 경로 명시 (로컬 빌드용)
+        dockerClient {
+            executable = "/usr/local/bin/docker"
         }
 
         // 컨테이너 설정
         container {
+            // Main class 명시
+            mainClass = "click.dailyfeed.content.ContentApplication"
             // JVM 옵션
             jvmFlags = listOf(
                 // Spring profile은 Helm에서 환경변수로 주입하므로 제거
