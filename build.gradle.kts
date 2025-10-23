@@ -46,12 +46,8 @@ project(":dailyfeed-content") {
     jib {
         // Base 이미지 설정 (Java 17 기반)
         from {
-            // Google의 distroless 이미지 사용 (인증 불필요)
-//            image = "gcr.io/distroless/java17-debian12"
-            // 보안 강화된 최소한의 베이스 이미지
-//            image = "amazoncorretto:17"
-             image = "eclipse-temurin:17-jre-alpine"
-            // 또는 더 작은 이미지를 원한다면: "gcr.io/distroless/java17-debian11"
+            // ARM64를 지원하는 버전 사용 (alpine은 ARM64 지원 안함)
+            image = "eclipse-temurin:17-jre"
         }
 
         // 타겟 이미지 설정
