@@ -62,7 +62,7 @@ source install-local.sh cbt-20251103-1 ## cbt-20251103-1 은 이미지 태그 �
 ```bash
 ## 수정하려는 helm app 이 dailyfeed-content 일 경우
 cd dailyfeed-app-helm
-cd member
+cd content
 source uninstall-helm.sh ## dailyfeed-content 제거
 source install-helm-local.sh ## dailyfeed-content 실행 
 ```
